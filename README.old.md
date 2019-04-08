@@ -1,1 +1,1 @@
-# reactcc
+<!-- Cleanup automatically provided files -->
