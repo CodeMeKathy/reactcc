@@ -10,8 +10,9 @@
 
 body {
   font-family: 'Waiting for the Sunrise', cursive;
+  
   line-height: 1.4;
-  color: #BFCFF7;
+  background-color: #BFCFF7;
   
 }
 
@@ -26,3 +27,25 @@ body {
   color: white;
 }
 
+.logo {
+  font-family: 'Pacifico', cursive;
+  text-align: right;
+  margin-bottom: 0em;
+  margin-top: .2em;
+}
+
+.header-title {
+  margin-top: 0;
+
+}
+
+.todos {
+  font-family: 'Raleway', sans-serif;
+  
+}
+
+.checkbox {
+  float: left;
+  /* margin-left: 30em; */
+  /* margin-right: 0; */
+}

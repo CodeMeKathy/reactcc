@@ -30,7 +30,8 @@ class App extends Component {
     // console.log(this.state.todos)
     return (
       <div className="App">
-        <h1>CodeMeKathy</h1>
+        <h4 className='logo'>CodeMeKathy</h4>
+        <h1 className='header-title'>Git Sh*t Done!</h1>
         <Todos todos={this.state.todos} />
       </div>
     );
