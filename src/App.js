@@ -26,13 +26,18 @@ class App extends Component {
       }
     ]
   }
+
+  markTodoComplete = (id) => {
+    console.log(id)
+  }
+
   render() {
     // console.log(this.state.todos)
     return (
       <div className="App">
         <h4 className='logo'>CodeMeKathy</h4>
         <h1 className='header-title'>Git Sh*t Done!</h1>
-        <Todos todos={this.state.todos} />
+        <Todos todos={this.state.todos} markTodoComplete={this.markTodoComplete} />
       </div>
     );
   }

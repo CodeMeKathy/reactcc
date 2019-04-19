@@ -36,12 +36,17 @@ body {
 
 .header-title {
   margin-top: 0;
-
+ font-size: 43px;
 }
+
+.todoDiv {
+ background-color: '#eeeeee';
+}
+
 
 .todos {
   font-family: 'Raleway', sans-serif;
-  
+  background-color: '#eeeeee';
 }
 
 .checkbox {

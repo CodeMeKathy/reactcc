@@ -1,14 +1,59 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 
 export class TodoItem extends Component {
+
+  getTodoStyle = () => {
+  // If/Else Option
+  //   if(this.props.todos.completed) {
+  //     return {
+  //       textDecoration: 'line-through'
+  //     }
+  //   } else {
+  //     return {
+  //       textDecoration: 'none'
+  //     }
+  //   }
+
+  // }
+  // Turnery Option
+    return {
+      background: 'white',
+      textDecoration: this.props.todos.completed ?
+      'line-through': 'none'
+      }
+    }
+
+  markTodoComplete = (e) => {
+    console.log(this.props)
+    // Without state manager component drilling is utilized to access prop and update.
+  }
+
   render() {
+    const { id, title } = this.props.todos;
     return (
-      <div>
+      // {{inlineStyling}} vice {variable}
+      <div className='todoDiv' style={this.getTodoStyle()}> 
         {/* <h4 className='todos' >{ this.props.todos.title  }</h4> */}
-      <input type="checkbox" name="checkbox" className="checkbox"/><h4 className='todos' >{ this.props.todos.title  }</h4>
+        <p className='todos' >
+        <input type="checkbox" name="checkbox" className="checkbox" onChange={this.props.markTodoComplete.bind(this, id)} /> {' '}
+        { title  }
+        </p>
       </div>
         )
   }
 }
+
+// PropTypes
+TodoItem.propTypes = {
+  todos: PropTypes.object.isRequired
+}
+
+// CSS Variables
+
+// const todoStyle = {
+//   backgroundColor: '#eeeeee'
+// }
 
 export default TodoItem
