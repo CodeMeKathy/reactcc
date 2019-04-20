@@ -27,8 +27,16 @@ class App extends Component {
     ]
   }
 
+  // Toggle Todo Complete 
   markTodoComplete = (id) => {
-    console.log(id)
+    // console.log(id) // Confirmed that the onChange functionality with todo ID return.
+    this.setState({ todos: this.state.todos.map(todo => {
+      if (todo.id === id) {
+        todo.completed = !todo.completed
+      }
+      return todo
+      })
+    })
   }
 
   render() {
