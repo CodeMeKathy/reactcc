@@ -39,13 +39,21 @@ class App extends Component {
     })
   }
 
+  // Delete (del) Todo
+  delTodo = (id) => {
+    // console.log(id) // Confirming todo state props passed through to TodoItem.js
+    // Using .filter(), a high order array method to manipulate state and loop todos based on the selected ID (or condition) to return a new array without the selected ID.
+    this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)] }) // pass thru state object using spread operator (...) to copy everything present within the todos object to access using the filter method.
+  
+  }
+
   render() {
     // console.log(this.state.todos)
     return (
       <div className="App">
         <h4 className='logo'>CodeMeKathy</h4>
         <h1 className='header-title'>Git Sh*t Done!</h1>
-        <Todos todos={this.state.todos} markTodoComplete={this.markTodoComplete} />
+        <Todos todos={this.state.todos} markTodoComplete={this.markTodoComplete} delTodo={this.delTodo} />
       </div>
     );
   }
