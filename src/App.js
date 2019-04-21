@@ -53,10 +53,12 @@ class App extends Component {
     // console.log(this.state.todos)
     return (
       <div className="App">
-        <Logo />
-        <Header />
-        <Todos todos={this.state.todos} markTodoComplete={this.markTodoComplete} delTodo={this.delTodo} />
-        <AddTodoItem />
+        <div className="container">
+          <Logo />
+          <Header />
+          <Todos todos={this.state.todos} markTodoComplete={this.markTodoComplete} delTodo={this.delTodo} />
+          <AddTodoItem />
+        </div>
       </div>
     );
   }
