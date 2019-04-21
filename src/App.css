@@ -16,6 +16,10 @@ body {
   
 }
 
+.container {
+  padding: 0 1rem;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -54,3 +58,33 @@ body {
   /* margin-left: 30em; */
   /* margin-right: 0; */
 }
+
+
+.btnStyle {
+  background: #F9A799;
+  border-radius: 50%;
+  cursor: pointer;
+  float: right;
+  border: none;
+  padding: 5px 3px;
+}
+
+.btnStyle:hover {
+  background: #A5AAD9;
+}
+
+.btn {
+  /* display: inline-block; */
+  border: none;
+  background: #F9A799;
+  padding: 7px 20px;
+  cursor: pointer;
+}
+
+
+.btn:hover {
+  background: #A5AAD9;
+}
+
+
+
