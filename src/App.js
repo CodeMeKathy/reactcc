@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import Todos from './components/Todos'
-import Header from './components/Header'
+import Header from './components/layouts/Header'
 import Logo from './components/Logo'
+import Todos from './components/Todos'
+import AddTodoItem from './components/AddTodoItem';
+
 
 import './App.css';
 
@@ -33,7 +35,7 @@ class App extends Component {
     this.setState({ todos: this.state.todos.map(todo => {
       if (todo.id === id) {
         todo.completed = !todo.completed
-      }
+      } 
       return todo
       })
     })
@@ -54,6 +56,7 @@ class App extends Component {
         <Logo />
         <Header />
         <Todos todos={this.state.todos} markTodoComplete={this.markTodoComplete} delTodo={this.delTodo} />
+        <AddTodoItem />
       </div>
     );
   }
