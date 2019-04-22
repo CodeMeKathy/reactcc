@@ -60,6 +60,19 @@ body {
 }
 
 
+.addTodoInput {
+
+  display: flex;
+  flex-grow: 10;
+  padding: 5px;
+}
+
+/* [ ] Fix the box-shadow on focus */
+.addTodoInput:focus {
+  box-shadow: 2 2 4px #A5AAD9 !important;
+  /* border: 10px solid #282c34 !important; */
+}
+
 .btnStyle {
   background: #F9A799;
   border-radius: 50%;
@@ -85,6 +98,5 @@ body {
 .btn:hover {
   background: #A5AAD9;
 }
-
 
 
