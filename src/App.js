@@ -4,25 +4,26 @@ import Logo from './components/Logo'
 import Todos from './components/Todos'
 import AddTodoItem from './components/AddTodoItem';
 
-
 import './App.css';
+
+import uuid from 'uuid'
 
 class App extends Component {
   // Adding State as a JS Object with an array of objects inside.
   state = {
     todos: [
       {
-        id: 1, //A unique identifier for each data object 
+        id: uuid.v4(), //A unique identifier for each data object 
         title: 'Update Personal Website: KathyLambert.me',
         completed: false,
       },
       {
-        id: 2, //A unique identifier for each data object 
+        id: uuid.v4(), //A unique identifier for each data object 
         title: 'Finish reading You Don\'t Know JS',
         completed: false,
       },
       {
-        id: 3, //A unique identifier for each data object 
+        id: uuid.v4(), //A unique identifier for each data object 
         title: 'Start Wes Bos\' Advanced React Course' ,
         completed: false,
       }
@@ -52,7 +53,13 @@ class App extends Component {
   // Add Todo Item
   addTodo = (title) => {
     // console.log(title)
-    // Once confirmed data is returned.  Now add the data to the App.js state using the spread operator. 
+    // Once confirmed data is returned.  Now add the data to the App.js state using the spread operator and setState. 
+    const newTodo = {
+      id: uuid.v4(),
+      title: title,
+      completed: false
+    }
+    this.setState({ todos: [...this.state.todos, newTodo] })
   }
 
   render() {
