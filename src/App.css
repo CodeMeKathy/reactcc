@@ -8,6 +8,20 @@ body {
 
 .container {
   padding: 0 1rem;
+<<<<<<< HEAD
+=======
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+>>>>>>> 9bc3c2ebcf0092c9b7c5c4f53ec0f6da75704bc9
 }
 
 .logo {
@@ -41,6 +55,7 @@ body {
 
 
 .addTodoInput {
+<<<<<<< HEAD
   display: flex;
   flex-grow: 10;
   padding: 5px;
@@ -50,6 +65,12 @@ body {
 input {
   text-align: center;
 
+=======
+
+  display: flex;
+  flex-grow: 10;
+  padding: 5px;
+>>>>>>> 9bc3c2ebcf0092c9b7c5c4f53ec0f6da75704bc9
 }
 
 /* [ ] Fix the box-shadow on focus */
@@ -85,6 +106,7 @@ input {
 }
 
 
+<<<<<<< HEAD
 /* [ ] Consider Removing */
 
 /* .App {
@@ -107,3 +129,5 @@ input {
   font-size: calc(10px + 2vmin);
   color: white;
 } */
+=======
+>>>>>>> 9bc3c2ebcf0092c9b7c5c4f53ec0f6da75704bc9
