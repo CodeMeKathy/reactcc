@@ -15,12 +15,25 @@ body {
   text-align: right;
   margin-bottom: 0em;
   margin-top: .2em;
+
+}
+
+.header {
+  color: white;
+  text-align: center;
 }
 
 .header-title {
   margin-top: 0;
  font-size: 43px;
  text-align: center;
+ margin-bottom: 0;
+
+}
+
+.link {
+  color: black;
+  text-decoration: none;
 }
 
 .todoDiv {
