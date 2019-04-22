@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import uuid from 'uuid'
+import axios from "axios";
 
 import Header from './components/layouts/Header'
 import Logo from './components/layouts/Logo'
@@ -9,29 +11,34 @@ import About from "./components/pages/About";
 
 import './App.css';
 
-import uuid from 'uuid'
+
 
 class App extends Component {
   // Adding State as a JS Object with an array of objects inside.
   state = {
     todos: [
-      {
-        id: uuid.v4(), //A unique identifier for each data object 
-        title: 'Update Personal Website: KathyLambert.me',
-        completed: false,
-      },
-      {
-        id: uuid.v4(), //A unique identifier for each data object 
-        title: 'Finish reading You Don\'t Know JS',
-        completed: false,
-      },
-      {
-        id: uuid.v4(), //A unique identifier for each data object 
-        title: 'Start Wes Bos\' Advanced React Course' ,
-        completed: false,
-      }
+      // {
+      //   id: uuid.v4(), //A unique identifier for each data object 
+      //   title: 'Update Personal Website: KathyLambert.me',
+      //   completed: false,
+      // },
+      // {
+      //   id: uuid.v4(), //A unique identifier for each data object 
+      //   title: 'Finish reading You Don\'t Know JS',
+      //   completed: false,
+      // },
+      // {
+      //   id: uuid.v4(), //A unique identifier for each data object 
+      //   title: 'Start Wes Bos\' Advanced React Course' ,
+      //   completed: false,
+      // }
     ]
   }
+
+  componentDidMount() {
+    axios.get('https://jsonplaceholder.typicode.com/todos').then(res => console.log(res.data))
+  }
+  
 
   // Toggle Todo Complete 
   markTodoComplete = (id) => {
@@ -72,7 +79,7 @@ class App extends Component {
         <div className="App">
           <div className="container">
             <Logo />
-            <Header />
+            <Header /> 
             <Route exact path='/' render={props => (
               <React.Fragment>
                 <Todos todos={this.state.todos} markTodoComplete={this.markTodoComplete} delTodo={this.delTodo} />

@@ -21,6 +21,7 @@ body {
 .header {
   color: white;
   text-align: center;
+  margin-bottom: 1em;
 }
 
 .header-title {
