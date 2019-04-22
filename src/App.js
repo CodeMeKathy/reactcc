@@ -49,6 +49,12 @@ class App extends Component {
   
   }
 
+  // Add Todo Item
+  addTodo = (title) => {
+    // console.log(title)
+    // Once confirmed data is returned.  Now add the data to the App.js state using the spread operator. 
+  }
+
   render() {
     // console.log(this.state.todos)
     return (
@@ -57,7 +63,7 @@ class App extends Component {
           <Logo />
           <Header />
           <Todos todos={this.state.todos} markTodoComplete={this.markTodoComplete} delTodo={this.delTodo} />
-          <AddTodoItem />
+          <AddTodoItem addTodo={this.addTodo} />
         </div>
       </div>
     );

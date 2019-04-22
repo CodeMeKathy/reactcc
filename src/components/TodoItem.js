@@ -31,13 +31,18 @@ export class TodoItem extends Component {
   }
 
   render() {
-    const { id, title } = this.props.todo // Used destructuring to pull the variables out of the todo props.
+    const { id, title, completed } = this.props.todo // Used destructuring to pull the variables out of the todo props.
     return (
       // {{inlineStyling}} vice {variable Styling}
       <div className='todoDiv' style={this.getTodoStyle()}> 
         {/* <h4 className='todos' >{ this.props.todos.title  }</h4> */}
         <h4 className='todos' >
-        <input type="checkbox" name="checkbox" className="checkbox" onChange={this.props.markTodoComplete.bind(this, id)} /> {' '}
+        <input 
+          type="checkbox" 
+          name="checkbox" 
+          className="checkbox"
+          checked={completed} 
+          onChange={this.props.markTodoComplete.bind(this, id)} /> {' '}
         { title }
         <button onClick={this.props.delTodo.bind(this, id)} className='btnStyle'> x </button>
         </h4>
