@@ -31,7 +31,7 @@ export class TodoItem extends Component {
   }
 
   render() {
-    const { id, title, completed } = this.props.todo // Used destructuring to pull the variables out of the todo props.
+    const { id, title} = this.props.todo // Used destructuring to pull the variables out of the todo props.
     return (
       // {{inlineStyling}} vice {variable Styling}
       <div className='todoDiv' style={this.getTodoStyle()}> 
@@ -58,14 +58,6 @@ TodoItem.propTypes = {
   markTodoComplete: PropTypes.func.isRequired,
   delTodo: PropTypes.func.isRequired,
 }
-
-
-
-// CSS Variables
-
-// const todoStyle = {
-//   backgroundColor: '#eeeeee'
-// }
 
 
 
