@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import uuid from 'uuid'
+// import uuid from 'uuid'
 import axios from "axios";
 
 import Header from './components/layouts/Header'
@@ -36,7 +36,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://jsonplaceholder.typicode.com/todos').then(res => console.log(res.data))
+    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=2')
+      .then(res => this.setState({ todos: res.data }))
+    //.then(res => console.log(res.data))
   }
   
 
@@ -64,12 +66,17 @@ class App extends Component {
   addTodo = (title) => {
     // console.log(title)
     // Once confirmed data is returned.  Now add the data to the App.js state using the spread operator and setState. 
-    const newTodo = {
-      id: uuid.v4(),
-      title: title,
-      completed: false
-    }
-    this.setState({ todos: [...this.state.todos, newTodo] })
+    // const newTodo = {
+    //   id: uuid.v4(),
+    //   title: title,
+    //   completed: false
+    // }
+    // this.setState({ todos: [...this.state.todos, newTodo] })
+    axios.post('https://jsonplaceholder.typicode.com/todos', {
+      title,
+      completed: false 
+    })
+    .then(res => this.setState({ todos: [...this.state.todos, res.data] }))
   }
 
   render() {
