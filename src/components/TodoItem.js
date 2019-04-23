@@ -41,8 +41,9 @@ export class TodoItem extends Component {
           type="checkbox" 
           name="checkbox" 
           className="checkbox"
-          checked={completed} 
-          onChange={this.props.markTodoComplete.bind(this, id)} /> {' '}
+          onChange={this.props.markTodoComplete.bind(this, id)}
+          checked={this.props.todo.completed ? 'checked' : ''} /> 
+        {' '}
         { title }
         <button onClick={this.props.delTodo.bind(this, id)} className='btnStyle'> x </button>
         </h4>
@@ -53,8 +54,12 @@ export class TodoItem extends Component {
 
 // PropTypes
 TodoItem.propTypes = {
-  todo: PropTypes.object.isRequired
+  todo: PropTypes.object.isRequired,
+  markTodoComplete: PropTypes.func.isRequired,
+  delTodo: PropTypes.func.isRequired,
 }
+
+
 
 // CSS Variables
 

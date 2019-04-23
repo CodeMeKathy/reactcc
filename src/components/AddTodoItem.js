@@ -1,6 +1,7 @@
 // Command Short-cut : 'rce'
 
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 export class AddTodoItem extends Component {
   // Add a component level state to capture the user input into the AddTodoItem input and Confirm data pass thru.
@@ -45,6 +46,12 @@ export class AddTodoItem extends Component {
     )
   }
 }
+
+// PropTypes
+AddTodoItem.propTypes = {
+  addTodo: PropTypes.func.isRequired,
+}
+
 
 export default AddTodoItem
 

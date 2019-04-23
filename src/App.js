@@ -36,7 +36,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=2')
+    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=5')
       .then(res => this.setState({ todos: res.data }))
     //.then(res => console.log(res.data))
   }
@@ -58,12 +58,14 @@ class App extends Component {
   delTodo = (id) => {
     // console.log(id) // Confirming todo state props passed through to TodoItem.js
     // Using .filter(), a high order array method to manipulate state and loop todos based on the selected ID (or condition) to return a new array without the selected ID.
-    this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)] }) // pass thru state object using spread operator (...) to copy everything present within the todos object to access using the filter method.
-  
+    // this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)] }) // pass thru state object using spread operator (...) to copy everything present within the todos object to access using the filter method.
+    axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+    .then(res => this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)] }))
+
   }
 
   // Add Todo Item
-  addTodo = (title) => {
+  addTodo = (title, id) => {
     // console.log(title)
     // Once confirmed data is returned.  Now add the data to the App.js state using the spread operator and setState. 
     // const newTodo = {
@@ -74,10 +76,14 @@ class App extends Component {
     // this.setState({ todos: [...this.state.todos, newTodo] })
     axios.post('https://jsonplaceholder.typicode.com/todos', {
       title,
+      id,
       completed: false 
     })
     .then(res => this.setState({ todos: [...this.state.todos, res.data] }))
   }
+
+// [ ] - Fix 202 Warning error connected to id and unique key
+  // id: this.state.todos.length+1 
 
   render() {
     // console.log(this.state.todos)
